@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .box {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+
+        .box1 {
+            background-color: cadetblue;
+        }
+
+
+        .box2 {
+            background-color: burlywood;
+        }
+
+
+        .box3 {
+            background-color: chartreuse;
+        }
+
+
+        .box4 {
+            background-color: chocolate;
+        }
+
+
+        .box5 {
+            background-color: brown;
+        }
+
+
+        .left-button,
+        .right-button {
+            width: 5.5rem;
+            height: 5.5rem;
+            border-bottom: 6px white solid;
+            border-left: 6px white solid;
+            position: absolute;
+            top: 42%;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+
+        .left-button {
+            transform: rotate(45deg);
+            left: 5.5rem;
+        }
+
+
+        .right-button {
+            transform: rotate(225deg);
+            right: 5.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left-button"></div>
+        <div class="right-button"></div>
+    </div>
+    <script>
+
+        let x = 2;
+        const box = document.querySelector(".box");
+        box.className = "box box3";
+        const left_button = document.querySelector(".left-button");
+        const right_button = document.querySelector(".right-button");
+        const box1 = document.querySelector(".box1");
+        const box2 = document.querySelector(".box2");
+        const box3 = document.querySelector(".box3");
+        const box4 = document.querySelector(".box4");
+        const box5 = document.querySelector(".box5");
+
+        const boxes = ["box box1", "box box2", "box box3", "box box4", "box box5"];
+
+        left_button.addEventListener("click", function () {
+            if (x > 0) {
+                x--;
+            }
+            else {
+                x = 0;
+            }
+            box.className = boxes[x];
+        })
+        right_button.addEventListener("click", function () {
+            if (x < 4) {
+                x++;
+            }
+            else {
+                x = 4;
+            }
+            box.className = boxes[x];
+        })
+
+    </script>
+</body>
+
+</html>

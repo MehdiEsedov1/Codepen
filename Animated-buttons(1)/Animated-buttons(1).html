@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #17181C;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            column-gap: 40px;
+            width: 90%;
+            height: 300px;
+            margin: auto;
+            margin-top: 300px;
+        }
+
+        a {
+            width: 250px;
+            height: 50px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        p {
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 600;
+        }
+
+        /***********FISRT BUTTON*************/
+
+        .first-button {
+            width: 250px;
+            height: 50px;
+            transition: all 0.2s ease-in;
+            border: 3px rgb(77, 141, 193) solid;
+            color: rgb(77, 141, 193);
+        }
+
+        .first-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px -5px rgb(77, 141, 193);
+            border: 3px rgb(106, 188, 255) solid;
+            color: rgb(103, 187, 255);
+        }
+
+        /***********SECOND BUTTON*************/
+
+        .second-button {
+            width: 250px;
+            height: 50px;
+            transition: all 0.2s ease-in;
+            border: 3px rgb(149, 77, 216) solid;
+            color: rgb(149, 77, 216);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .second-button::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            z-index: -1;
+            background-color: rgb(149, 77, 216);
+            transform: translateY(-200px) translateX(-500px);
+            transition: all 0.4s ease-in;
+        }
+
+        .second-button:hover::before {
+            transform: translateX(-140px) translateY(-230px);
+            background-color: rgb(149, 77, 216);
+            box-shadow: 0px 5px 25px -5px rgb(171, 99, 239);
+
+        }
+
+        .second-button:hover {
+            color: rgb(184, 120, 243);
+            border: 3px rgb(171, 99, 239) solid;
+            box-shadow: 0px 5px 25px -5px rgb(171, 99, 239);
+        }
+
+        /***********THRID BUTTON*************/
+
+        .thrid-button {
+            width: 250px;
+            height: 50px;
+            border: 3px rgba(14, 192, 106, 0.636) solid;
+            position: relative;
+            color: rgba(14, 192, 106, 0.664);
+        }
+
+        .thrid-button::before {
+            width: 264px;
+            height: 64px;
+            content: "";
+            display: block;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+        }
+
+        .thrid-button:hover::before {
+
+            border: 3px rgb(14, 192, 106) solid;
+            box-shadow: 0px 5px 25px 1px rgb(14, 192, 106);
+            color: rgb(14, 192, 106);
+            transform: scale(1);
+
+        }
+
+        .thrid-button:hover {
+            color: rgb(14, 192, 106);
+            border: 3px rgb(14, 192, 106) solid;
+        }
+
+        /***********FOURTH BUTTON*************/
+
+        .fourth-button {
+            width: 250px;
+            height: 50px;
+            border: 3px rgba(255, 0, 0, 0.487) solid;
+            position: relative;
+            color: rgba(255, 0, 0, 0.487);
+        }
+
+        .fourth-button:before {
+            content: "";
+            display: block;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            border-left: 3px rgba(255, 0, 0, 0.487) solid;
+            border-top: 3px rgba(255, 0, 0, 0.487) solid;
+            transition: all 0.3s ease-in;
+        }
+
+        .fourth-button:after {
+            content: "";
+            display: block;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            border-right: 3px rgba(255, 0, 0, 0.487) solid;
+            border-bottom: 3px rgba(255, 0, 0, 0.487) solid;
+            transition: all 0.2s ease-in;
+        }
+
+        .fourth-button:hover::before {
+            width: 50px;
+            height: 50px;
+            border-left: 3px rgb(255, 0, 0) solid;
+            border-top: 3px rgb(255, 0, 0) solid;
+        }
+
+        .fourth-button:hover::after {
+            width: 50px;
+            height: 50px;
+            border-right: 3px rgb(255, 0, 0) solid;
+            border-bottom: 3px rgb(255, 0, 0) solid;
+        }
+
+        .fourth-button:hover {
+            color: rgb(255, 0, 0);
+            box-shadow: 0px 5px 25px 1px rgb(255, 0, 0);
+            border-color: rgb(255, 0, 0);
+        }
+
+        /***********FIVETH BUTTON*************/
+
+        .fiveth-button {
+            width: 250px;
+            height: 50px;
+            border: 3px rgba(255, 255, 0, 0.494) solid;
+            position: relative;
+            color: rgba(255, 255, 0, 0.494);
+        }
+
+        .fiveth-button::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease-in;
+        }
+
+        .fiveth-button:hover:before {
+            border-left: 3px yellow solid;
+            border-right: 3px yellow solid;
+            width: 100%;
+            box-shadow: 0px 5px 25px 1px yellow;
+
+        }
+
+        .fiveth-button:hover {
+            color: yellow;
+            border: 3px yellow solid;
+        }
+
+        /***********FIVETH BUTTON END*************/
+
+        @media (360px <= width <=640px) {
+
+            .container {
+                margin-top: 20px;
+                margin-left: 13%;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .container {
+                height: 700px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="#">
+            <div class="first-button">
+                <p>
+                    first-button
+                </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="second-button">
+                <p>
+                    second-button
+                </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="thrid-button">
+                <p>
+                    thrid-button
+                </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="fourth-button">
+                <p>
+                    fourth-button
+                </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="fiveth-button">
+                <p>
+                    fiveth-button
+                </p>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>

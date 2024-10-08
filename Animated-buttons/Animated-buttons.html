@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: antiquewhite;
+        }
+
+        .container {
+            margin: auto;
+            margin-top: 300px;
+            width: 80%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        @media (max-width: 1000px) {
+
+            .container {
+                margin-top:60px;
+                transform: translateX(40px);
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                width: 70%;
+            }
+
+            .container {
+                height: 700px;
+            }
+
+        }
+
+        p {
+            line-height: 50px;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-weight: 600;
+            text-align: center;
+            color: black;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        /********************FIRST BUTTON*********************/
+
+        .first-button {
+            width: 175px;
+            height: 50px;
+            background-color: rgb(234, 203, 166);
+            border: 2px black solid;
+            position: relative;
+            z-index: 1;
+        }
+
+        .first-button::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 100%;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.4s ease-in;
+            z-index: -1;
+        }
+
+        .first-button:hover::before {
+            width: 100%;
+        }
+
+        /********************SECOND BUTTON*********************/
+
+        .second-button {
+            width: 175px;
+            height: 50px;
+            background-color: rgb(234, 203, 166);
+            border: 2px black solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .second-button::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 100%;
+            background-color: whitesmoke;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.4s ease-in;
+            transform: translateY(44px);
+        }
+
+        .second-button:hover::before {
+            width: 100%;
+        }
+
+        /********************THRID BUTTON*********************/
+
+        .third-button {
+            width: 175px;
+            height: 50px;
+            background-color: rgb(234, 203, 166);
+            border: 2px black solid;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .third-button::before {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 100px;
+            background-color: whitesmoke;
+            transition: 0.4s ease-in;
+            transform: rotate(45deg) translateX(-175px);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .third-button::after {
+            content: "";
+            display: block;
+            width: 50%;
+            height: 100px;
+            background-color: whitesmoke;
+            transition: 0.4s ease-in;
+            transform: rotate(45deg) translateX(100px) translateY(-50px);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .third-button:hover::before {
+            transform: rotate(45deg) translateX(-75px);
+        }
+
+        .third-button:hover::after {
+            transform: rotate(45deg) translateX(39px) translateY(-30px);
+        }
+
+        /********************FOURTH BUTTON*********************/
+
+        .fourth-button {
+            width: 175px;
+            height: 50px;
+            background-color: rgb(234, 203, 166);
+            border: 2px black solid;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .fourth-button::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 0%;
+            background-color: whitesmoke;
+            transition: 0.4s;
+            position: absolute;
+            top: 50%;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .fourth-button:hover::before {
+            height: 100%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        /********************FIVETH BUTTON*********************/
+
+        .fiveth-button {
+            width: 175px;
+            height: 50px;
+            background-color: rgb(234, 203, 166);
+            border: 2px black solid;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .fiveth-button::before {
+            content: "";
+            display: block;
+            background-color: whitesmoke;
+            height: 100%;
+            width: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transition: 0.4s ease-in;
+            z-index: -1;
+        }
+
+        .fiveth-button:hover::before {
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="#">
+            <div class="first-button">
+                <p>
+                    first-button
+                </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="second-button">
+                <p>
+                    second-button
+                </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="third-button">
+                <p>
+                    third-button
+                </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="fourth-button">
+                <p>
+                    fourth-button
+                </p>
+            </div>
+        </a>
+        <a href="#">
+            <div class="fiveth-button">
+                <p>
+                    fiveth-button
+                </p>
+            </div>
+        </a>
+    </div>
+</body>
+
+</html>
